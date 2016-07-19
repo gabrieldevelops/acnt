@@ -1,0 +1,37 @@
+<header flex layout="column">
+    <div layout="row" layout-align="space-around center" flex>
+        <img ng-src="app/components/header/logo.gif" class="header--logo" />
+        <md-button>
+            2
+        </md-button>
+    </div>
+    <md-toolbar class="md-hue-2" flex>
+        <div class="md-toolbar-tools"  layout="row" flex>
+            <div layout="row" layout-align="center center" flex>
+                <md-menu-bar>
+                    <md-menu ng-repeat="menu in $ctrl.menu">
+                        <a  ng-click="$ctrl.openMenu($mdOpenMenu, $event)">
+                            {{menu.name}}
+                        </a>
+                        <md-menu-content width="4">
+                            <md-menu-item ng-repeat="subMenu in menu.subMenus">
+                                <md-button>
+                                    {{subMenu.name}}
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-menu-bar>     
+            </div>          
+        </div>
+    </md-toolbar>
+</header>
+
+<!--<header class="header">
+  <h1>todos</h1>
+  <todo-text-input
+    new-todo="true"
+    on-save="$ctrl.handleSave(text)"
+    placeholder="What needs to be done?"
+  ></todo-text-input>
+</header>-->
